@@ -5,18 +5,18 @@ import re
 
 st.set_page_config(page_title="Auto Recon Tools", page_icon="⚙️", layout="wide")
 
-st.title("⚙️ Automated Stock Take Reconciliation Tools")
-st.write("Aplikasi online untuk mencocokkan temuan surplus, minus, dan unrecorded secara otomatis untuk semua lokasi.")
+st.title("😹😹😹 Automated SO Reconciliation Tools by AmbatuMan 😹😹😹")
+st.write("Rekonsil surplus, minus, dan unrecorded? Di sini aja.")
 
 st.info("""
 💡 **Aturan Penamaan Sheet Excel:**
-Biar aplikasi bisa mendeteksi lokasi secara otomatis, pastikan nama sheet di file Excel lu menggunakan format:
+Biar aplikasi bisa mendeteksi lokasi secara otomatis, pastikan *nama sheet* di file Excel-nya pake format:
 * **DATA [Nama Lokasi]** (Contoh: `DATA K166`, `DATA S1`, `DATA K245`)
 * **UNRECORD [Nama Lokasi]** (Contoh: `UNRECORD K166`, `UNRECORD S1`, `UNRECORD K245`)
 """)
 
 # File Uploader
-uploaded_file = st.file_uploader("Upload File Raw Excel Hasil Stock Take (.xlsx)", type=["xlsx"])
+uploaded_file = st.file_uploader("Upload File Raw Excel Hasil SO di sini (.xlsx)", type=["xlsx"])
 
 def proses_rekonsiliasi(xl, data_sheet, unrecord_sheet):
     try:
@@ -159,6 +159,6 @@ if uploaded_file is not None:
             st.download_button(
                 label="📥 Download Hasil Rekonsiliasi (.xlsx)",
                 data=buffer.getvalue(),
-                file_name="Hasil_Rekonsiliasi_Otomatis_All_Stations.xlsx",
+                file_name="Hasil_Rekonsilnya_lohya_😹😹😹.xlsx",
                 mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
             )
