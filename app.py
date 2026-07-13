@@ -5,11 +5,8 @@ import io
 # Setup Page & Header
 st.set_page_config(page_title="Stok Tek Reconsil Tools", page_icon="⚙️", layout="wide")
 
-st.title("⚙️ Stok Tek Reconsil Tools")
-try:
-    st.image("halah_nyocot.jpg", width=200)
-except:
-   pass 
+st.title("⚙️ Stok Tek Reconsil Tools st.image("halah_nyocot.jpg", width=30)")
+    
 st.write("Aplikasi pintar untuk mencari pasangan barang yang selisih (otomatis menyembunyikan temuan yang tidak memiliki pasangan silang).")
 
 uploaded_file = st.file_uploader("Upload File Raw Excel Hasil Stock Take (.xlsx)", type=["xlsx"])
