@@ -5,8 +5,16 @@ import io
 # Setup Page & Header
 st.set_page_config(page_title="Stok Tek Reconsil Tools", page_icon="⚙️", layout="wide")
 
-st.title("⚙️ Stok Tek Reconsil Tools")
-st.image("halah_nyocot.jpg", width=30)
+col1, col2, col3 = st.columns ([1, 6, 1])
+with col1:
+    st.image("halah_nyocot.jpg", width=40)
+with col2:
+    st.title("⚙️ Stok Tek Reconsil Tools")
+with col3:
+    st.image("halah_nyocot.jpg", width=40)
+
+#st.title("⚙️ Stok Tek Reconsil Tools")
+#st.image("halah_nyocot.jpg", width=40)
     
 st.write("Aplikasi pintar untuk mencari pasangan barang yang selisih (otomatis menyembunyikan temuan yang tidak memiliki pasangan silang).")
 
