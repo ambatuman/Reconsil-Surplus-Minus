@@ -3,19 +3,19 @@ import pandas as pd
 import io
 
 # Setup Page & Header
-st.set_page_config(page_title="Stok Tek Reconsil Tools", page_icon="⚙️", layout="wide")
+st.set_page_config(page_title="EZ SO Reconsil Tools", page_icon="⚙️", layout="wide")
 
 col1, col2, col3 = st.columns ([1, 2, 1])
 with col1:
     st.image("halah_nyocot.jpg", width=80)
 with col2:
-    st.title("⚙️ Stok Tek Reconsil Tools")
+    st.title("SO Reconsil Tools by Amba Tu Man")
 with col3:
     st.image("halah_nyocot.jpg", width=80)
     
-st.write("Aplikasi pintar untuk mencari pasangan barang yang selisih (otomatis menyembunyikan temuan yang tidak memiliki pasangan silang).")
+st.write("Malas Reconsil? Upload sini ajah")
 
-uploaded_file = st.file_uploader("Upload File Raw Excel Hasil Stock Take (.xlsx)", type=["xlsx"])
+uploaded_file = st.file_uploader("Upload File SO di sini (.xlsx) 😹", type=["xlsx"])
 
 def proses_semua_sheet(file_path):
     xl = pd.ExcelFile(file_path)
@@ -137,7 +137,7 @@ def proses_semua_sheet(file_path):
         if qty == 0:
             return '🟢 Match (Impas)'
         else:
-            return '🟡 Match (Ada Selisih)'
+            return '🟡 Ada Selisih'
             
     grouped['Status'] = grouped['Total QTY'].apply(detail_status)
     
@@ -157,14 +157,14 @@ def proses_semua_sheet(file_path):
     return grouped
 
 if uploaded_file is not None:
-    with st.spinner("Lagi ngegas baca data dan nyari pasangan..."):
+    with st.spinner("Sabar dulu loh ya 😹..."):
         try:
             df_hasil = proses_semua_sheet(uploaded_file)
             
             if df_hasil.empty:
-                st.warning("⚠️ Yah, ga ada satupun temuan yang bisa dipasangkan di file lu (semuanya jomblo).")
+                st.warning("⚠️ Gaada yang bisa match.")
             else:
-                st.success("🎉 Cihuy! Berhasil nemuin pasangan rekonsiliasi.")
+                st.success("🎉 Ada yang bisa match loh ya 😹.")
                 
                 lokasi_unik = df_hasil['LOC'].unique().tolist()
                 lokasi_terpilih = st.multiselect("📍 Filter Tabel Berdasarkan Lokasi:", options=lokasi_unik, default=lokasi_unik)
