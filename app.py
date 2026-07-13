@@ -5,7 +5,7 @@ import io
 # Setup Page & Header
 st.set_page_config(page_title="Stok Tek Reconsil Tools", page_icon="⚙️", layout="wide")
 
-col1, col2, col3 = st.columns ([1, 1, 1])
+col1, col2, col3 = st.columns ([1, 2, 1])
 with col1:
     st.image("halah_nyocot.jpg", width=80)
 with col2:
